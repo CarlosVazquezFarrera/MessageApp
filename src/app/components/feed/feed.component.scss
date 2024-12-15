@@ -1,4 +1,4 @@
-section {
+section.content {
     margin: 5% 4%;
     min-height: 100vh;
     position: relative;
@@ -6,6 +6,21 @@ section {
     mat-card {
         margin-bottom: 4%;
     }
+}
+.no-data {
+    display: flex;
+    justify-content: center;   
+    section {
+        margin: 0 5%;
+        img {
+            width: 100%;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size:xx-large;
+    }
+   
 }
 
 .floating-button {

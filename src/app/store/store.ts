@@ -1,5 +1,5 @@
-import { inject } from "@angular/core"
-import { patchState, signalStore, withMethods, withState } from "@ngrx/signals"
+import { computed, inject } from "@angular/core"
+import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals"
 import { messageAppState } from "./initialState"
 import { StudentService } from "../services/student.service"
 import { MessageService } from "../services/message.service"
@@ -53,5 +53,8 @@ export const messageAppStore = signalStore(
             const messages = [message, ...store.messages()];
             patchState(store, { messages })
         }
+    })),
+    withComputed(({ messages }) => ({
+        dataAvaiable: computed(() => messages().length > 0),
     }))
 )
