@@ -1,0 +1,5 @@
+<mat-form-field class="" class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Tell us how you feel" [formControl]="message" ></textarea>
+</mat-form-field>
+<button mat-flat-button [disabled]="message.invalid" (click)="addComment()">Comment</button>

@@ -1,0 +1,17 @@
+<main>
+    <section class="">
+        <h1 class="text-center">
+            MessageApp
+        </h1>
+        <mat-form-field appearance="outline">
+            <mat-label>Student Id</mat-label>
+            <input [formControl]="studentId" matInput placeholder="Type your id">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <button [disabled]="store.loading() || studentId.invalid" mat-flat-button (click)="login()">Login</button>
+        @if (store.loginError() ) {
+        <h6 class="text-center text-red ">Creck your credentials</h6>
+        }
+    </section>
+</main>

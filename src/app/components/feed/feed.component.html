@@ -1,0 +1,16 @@
+<section>
+    @for (message of store.messages(); track message.id) {
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>{{message.nombre}}</mat-card-title>
+            <mat-card-subtitle>{{message.text}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions align="end">
+            <button mat-button>{{message.createdat | customDate}}</button>
+        </mat-card-actions>
+    </mat-card>
+    }
+</section>
+<button class="floating-button" mat-fab aria-label="Add icon" (click)="openBottomSheet()">
+    <mat-icon>add</mat-icon>
+</button>
