@@ -1,4 +1,4 @@
 export const environment = {
-    SERVER: 'https://messageappapi-os7e.onrender.com',
-    API: 'https://messageappapi-os7e.onrender.com/api'
+    SERVER: 'https://localhost:7183',
+    API: 'https://localhost:7183/api'
 };

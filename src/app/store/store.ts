@@ -41,13 +41,8 @@ export const messageAppStore = signalStore(
         },
         async addMessage(newMesasage: NewMessage): Promise<void> {
             patchState(store, { loading: true })
-            const savedMesage = await messageService.addMessage(newMesasage);
-            const messages = [savedMesage, ...store.messages()];
-            patchState(store, (state) => ({
-                ...state,
-                loading: false,
-                messages
-            }))
+            await messageService.addMessage(newMesasage);
+            patchState(store, { loading: false })
         },
         messageReceived(message: MessageDTO): void {
             const messages = [message, ...store.messages()];
