@@ -26,6 +26,11 @@ export class SessionService {
     this.currentUserIsloggedIn = true;
   }
 
+  public logOut(): void {
+    sessionStorage.clear();
+    this.currentUserIsloggedIn = false;
+  }
+
   public get isLoggedIn(): boolean {
     return this.currentUserIsloggedIn;
   }
