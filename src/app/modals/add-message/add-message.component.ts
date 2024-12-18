@@ -34,6 +34,6 @@ export class AddMessageComponent {
       text: this.message.value!
     }
     await this.store.addMessage(newMessage);
-    this._bottomSheetRef.dismiss();
+    //this._bottomSheetRef.dismiss();
   }
 }

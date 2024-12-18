@@ -2,4 +2,4 @@
     <mat-label>Leave a comment</mat-label>
     <textarea matInput placeholder="Tell us how you feel" [formControl]="message" ></textarea>
 </mat-form-field>
-<button mat-flat-button [disabled]="message.invalid" (click)="addComment()">Comment</button>
+<button mat-flat-button [disabled]="message.invalid || store.loading()" (click)="addComment()">Comment</button>
