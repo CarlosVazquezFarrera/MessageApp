@@ -25,6 +25,7 @@
         </mat-card-header>
         <mat-card-actions align="end">
             <button mat-button>{{message.createdat | customDate}}</button>
+            <button [disabled]="store.loading()" mat-button (click)="delete(message.id)"><mat-icon>delete</mat-icon></button>
         </mat-card-actions>
     </mat-card>
     }

@@ -52,6 +52,15 @@ export const messageAppStore = signalStore(
         messageReceived(message: MessageDTO): void {
             const messages = [message, ...store.messages()];
             patchState(store, { messages })
+        },
+        async removeMessage(id: string): Promise<void> {
+            patchState(store, { loading: true })
+            await messageService.removeMessage(id);
+            patchState(store, (state)=>({
+                ...state,
+                loading: false,
+                messages: state.messages.filter(m => m.id !== id)
+            }))
         }
     })),
     withComputed(({ messages }) => ({

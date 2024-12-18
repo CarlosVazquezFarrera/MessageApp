@@ -15,6 +15,7 @@ import { CustomDatePipe } from '../../pipes/custom-date.pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { SessionService } from '../../services/session.service';
 import { Router } from '@angular/router';
+import { MessageDTO } from '../../models/messageDTO';
 
 
 
@@ -63,6 +64,10 @@ export class FeedComponent implements OnInit {
   public logOut(): void {
     this.userService.logOut();
     this.router.navigateByUrl('/login');
+  }
+
+  public delete(id: string) {
+    this.store.removeMessage(id);
   }
 
 }

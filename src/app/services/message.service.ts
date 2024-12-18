@@ -44,4 +44,8 @@ export class MessageService {
   public async addMessage(newMessage: NewMessage) {
     return await lastValueFrom(this.http.post<MessageDTO>(`${this.api}`, newMessage));
   }
+
+  public async removeMessage(id: string) {
+    return await lastValueFrom(this.http.delete<void>(`${this.api}?id=${id}`));
+  }
 }
